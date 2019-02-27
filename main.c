@@ -13,6 +13,8 @@ int (*get_math_function(char key, char *keys, int (*funcs[])(int, int), size_t n
             return funcs[i];
         }
     }
+
+    return funcs[0];
 }
 
 
@@ -25,5 +27,5 @@ int main()
 
     printf("key a Function \nEX: 1 + 1\n");
     scanf("%i %c %i", &a, &b, &c);
-    printf("%d %c %d = %d\n", a, b, c, get_math_function(b, keys, func_ptr, 4)(a, c));
+    printf("%d %c %d = %d\n", a, b, c, get_math_function(b, keys, fptr, 4)(a, c));
 }
